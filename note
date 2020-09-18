@@ -1,0 +1,72 @@
+********To run test parallel************
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="2"> 
+  <test name="Iteration-1">
+  <parameter name="browsername" value="chrome"/>
+  <parameter name="url" value="https://www.facebook.com/"/>
+  <parameter name="userid" value="9603634253"/>
+  <parameter name="password" value="Harsha@_205"/>
+    <classes>
+      <class name="tests.Testwithparameters"/>
+    </classes>
+    </test>
+    
+    <test name="Iteration-2">
+    <parameter name="browsername" value="opera"/>
+  <parameter name="url" value="https://www.facebook.com/"/>
+  <parameter name="userid" value="9603634253"/>
+  <parameter name="password" value="Harsha@_205"/>
+  <classes>
+      <class name="tests.Testwithparameters"/>
+    </classes>
+    </test>
+    
+    <test name="Iteration-3">
+    <parameter name="browsername" value="firefox"/>
+  <parameter name="url" value="https://www.facebook.com/"/>
+  <parameter name="userid" value="9603634253"/>
+  <parameter name="password" value="Harsha@_205"/>
+   <classes>
+      <class name="tests.Testwithparameters"/>
+    </classes>
+    </test>
+    
+   <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+**********To run methods parallel**********
+
+<suite name="suite1" parallel="methods" thread-count="no of method"/>
+
+
+
+*********To exclude a method from suite file********
+
+
+<suite name="Suite" verbose="10">
+	<test name="Test">
+		<classes>
+			<class name="tests.Sample">
+				<methods>
+					<exclude name="method5" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+*******Assert.fail();***********
+
+------>In general Testng can show one iteration as failed when some exception raised in the
+ iteration no catch block to handle that exception.
+ ----->By using  "Asser.fail()" code in required "if else" block and in "catch" blocks
+  we can fail corresponding iteration as per requirements of SUT.
+ 
+ 
+
